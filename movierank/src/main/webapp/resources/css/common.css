@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+	
+* { box-sizing: border-box; }
+body, ul {
+	margin: 0; padding: 0;
+	font-family: 'Nanum Gothic', sans-serif;
+	color: #515151;
+}
+ul { list-style-type: none; }
+a { text-decoration: none; color: inherit;}
+input::placeholder { color: #6e707e; }
+form { margin: 0px; }
+
+
+
+/* TOP 버튼 */
+#topBtn {
+	position: fixed;
+	bottom: 100px;
+	right: 40px;
+	display: none;
+	background: #F39C12;
+}
+
+/* QnA 버튼 */
+#qnaBtn {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	background: #02b3e4;
+	font-size: 28px;
+}
+/* side 버튼 */
+.sideBtn {
+	font-size: 22px;
+	width: 50px;
+	height: 50px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 25px;
+	outline: none;
+	z-index: 999;
+	transition: box-shadow .2s cubic-bezier(.4,0,1,1), 
+	            background-color .2s cubic-bezier(.4,0,.2,1);
+}
+.sideBtn:hover{
+	box-shadow: 0 14px 26px -12px hsla(0,0%,60%,.42), 
+				0 4px 23px 0 rgba(0,0,0,.12), 
+				0 8px 10px -5px hsla(0,0%,60%,.2);
+}
+.sideBtn > i {
+	transition: .3s;
+}
+.sideBtn:hover > i{
+	transform: scale(1.2);
+}
+
+
+
+.default_btn {
+	padding: 8px 22px;
+	background: #EB9333;
+	border-radius: 5px;
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+	transition: box-shadow .2s cubic-bezier(.4,0,1,1), 
+	            background-color .2s cubic-bezier(.4,0,.2,1);
+}
+.default_btn:hover {
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+					0 3px 1px -2px rgba(0,0,0,.2),
+					0 1px 5px 0 rgba(0,0,0,.12);
+		box-shadow: 0 14px 26px -12px hsla(0,0%,60%,.42), 
+					0 4px 23px 0 rgba(0,0,0,.12), 
+					0 8px 10px -5px hsla(0,0%,60%,.2);
+}
+.err_msg {
+	display: block;
+	color: tomato;
+	font-size: 14px;
+	text-align: center;
+	margin: 15px 0px;
+	visibility: hidden;
+}
+
+.btn:hover {
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* 색상표 */
+.color-delete { background-color: tomato; }
+.color-update { background-color: #EBA444; }
+.color-insert { background-color: #02b3e4; }
+.color-select { background-color: mediumseagreen; }
+.color-cancel { background-color: #dadada; color: black; }

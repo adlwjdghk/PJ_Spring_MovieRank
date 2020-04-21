@@ -1,6 +1,7 @@
 package com.movierank.service;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class MovieService {
 		
 		// DB에 있는 기존 영화정보데이터를 삭제!
 		mongoDao.dropCol();
-		
+		// 원래는 이렇게 하면 안됨
 		
 		// 1~10위까지 영화정보 추출
 		for (int i = 0; i < 10; i++) {
@@ -79,8 +80,18 @@ public class MovieService {
 				daumscore = Double.parseDouble(daumPoint); // 다음 평점
 			}
 			
+			/*
+			 * double a = mDto.getDaumscore(); 
+			 * double b = mDto.getNaverscore(); 
+			 * double c = ( a + b )/2; 
+			 * Double score = (Math.round((c*100)/100.0);
+			 * 내가 작성해본 코드
+			 */
 			
-			MovieDTO mDto = new MovieDTO(rank, movie, imgsrc, type, opendate, bookingrate, runtime, director, actor, navercode, naverscore, daumcode, daumscore);
+			DecimalFormat fmt = new DecimalFormat("#.##");
+			String fmtVal = fmt.format((daumscore + naverscore)/2);
+			Double score = Double.parseDouble(fmtVal);
+			MovieDTO mDto = new MovieDTO(rank, movie, imgsrc, type, opendate, bookingrate, runtime, director, actor, navercode, naverscore, daumcode, daumscore, score);
 			
 			log.info("<><><><><><>MOVIE: "+ mDto.toString());
 			rankList.add(mDto);

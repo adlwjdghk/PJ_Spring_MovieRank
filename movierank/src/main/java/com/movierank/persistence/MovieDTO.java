@@ -1,5 +1,8 @@
 package com.movierank.persistence;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +14,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Document(collection = "movie")
 public class MovieDTO {
-
+	@Id
 	private int rank;			
 	private String movie;
 	private String imgsrc;
@@ -20,7 +24,7 @@ public class MovieDTO {
 	private String opendate;
 	private String bookingrate;
 	private String runtime;
-	private String dirctor;
+	private String director;
 	private String actor;
 	private String navercode;
 	private Double naverscore;
@@ -43,7 +47,7 @@ public class MovieDTO {
 	 * 네이버+다음평점의 평균 */
 	
 	public MovieDTO(int rank, String movie, String imgsrc, String type, String opendate, String bookingrate,
-			String runtime, String dirctor, String actor, String navercode, Double naverscore, String daumcode,
+			String runtime, String director, String actor, String navercode, Double naverscore, String daumcode,
 			Double daumscore) {
 		super();
 		this.rank = rank;
@@ -53,7 +57,7 @@ public class MovieDTO {
 		this.opendate = opendate;
 		this.bookingrate = bookingrate;
 		this.runtime = runtime;
-		this.dirctor = dirctor;
+		this.director = director;
 		this.actor = actor;
 		this.navercode = navercode;
 		this.naverscore = naverscore;
