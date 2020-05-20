@@ -32,12 +32,13 @@ public class MovieService {
 		String daumRankUrl = "http://ticket2.movie.daum.net/Movie/MovieRankList.aspx";
 		
 		// 네이버 영화 실시간 예매 순위 1위~10위까지 수집
+		// 다음 영화 실시간 예매 순위 1위 ~10위까지 수집
+		
 		Document naverDoc = Jsoup.connect(naverRankUrl).get();
 		Elements naverList = naverDoc.select("dt.tit a");
 		Elements naverDetailMovie = naverDoc.select(".lst_detail_t1 > li");
 		Elements naverImg = naverDoc.select("div.thumb a img");
 		Elements scoreList = naverDoc.select("dl.lst_dsc");
-		// 다음 영화 실시간 예매 순위 1위 ~10위까지 수집
 		Document daumDoc = Jsoup.connect(daumRankUrl).get();
 		Elements daumList = daumDoc.select(".tit_join a");
 		
