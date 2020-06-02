@@ -11,8 +11,8 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.movierank.domain.MovieDTO;
 import com.movierank.persistence.MongoDAO;
-import com.movierank.persistence.MovieDTO;
 
 import lombok.extern.slf4j.Slf4j;
 
